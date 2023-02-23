@@ -4,8 +4,8 @@
     <title>Stephen Hwang</title>
     <author>Stephen Hwang</author>
     <meta charset="UTF-8">
-    <link rel = "stylesheet" href = "styles.css">
-    <link href = "styles.css" rel = "stylesheet">
+    <link href = "./styles.css" rel = "stylesheet"> 
+    <script src="./javascript.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,21 +27,44 @@
                     <h1 id = "lastname">Hwang</h1>
                 </div>
                 <!-- <h3>Data Scientist & Software Engineer</h3> -->
-                <p id = "intro-p">I'm a data scientist and software engineer interested in health and social impact through tech. I also love samoyeds.</p>
-                <!-- <p>I'm a data scientist with experience in building ML models and software engineering interested in public health and social impact in tech. Whether I'm predicting health outcomes or programming modules, I'm always excited to apply myself in interesting contexts while picking up new things along the way.</p> -->
+                <h6 id = "intro-h6">I'm a data scientist and software engineer interested in health and social impact through tech. I also love samoyeds.</h6>
             </div>
             <div class = "intro-right">
-                <img src = "img/stephen_and_dog.jpg" alt = "Stephen and dog" id = "stephen-and-dog">
+                <img src = "img/stephen_and_dog.jpg" alt = "Stephen and dog" id = "stephen-and-dog" onclick = "bork()">
+                <audio id = "bork" src = "sound/bork.mp3"></audio>
             </div>
         </div>
     
-        <div class = "aboutme container">
-            <h2>ABOUT ME</h2>
-            <p>blah blah</p>
+        <div class = "abtme container">
+            <div class = "abtme-right">
+                <h2>ABOUT ME</h2>
+                <p>I'm a data scientist with experience in building ML models and software engineering interested in public health and social impact in tech. Whether I'm predicting health outcomes or programming modules, I'm always excited to apply myself in interesting contexts while picking up new things along the way. This site is pretty ugly right now, but I have an idea that'll take much more time than I have at the moment.</p>
+            </div>
+            
         </div>
     
         <div class = "workandexp container">
-            <h2>EXPERIENCE</h2>
+            <h2>PROJECTS</h2>
+            <div class = "allprojects"> 
+                <div class = "grid-item">
+                    <h3>Predicting Heart Attacks - Python</h3>
+                    <ul>
+                        <li>Collaborated with a team of four to create two predictive models utilizing logistic regression and random forests via scikit-learn with pandas to predict heart attacks based on risk factors, identified manually via Matplotlib</li>
+                        <li>
+                            Achieved 90.2% and 91.8% test accuracy respectively.
+                            <a href = https://github.com/jhwang0703/dma-projects/tree/main/HeartAttackPrediction target = "_blank" rel = "noreferrer noopener">Github</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class = "grid-item">
+                    <h3>Titanic Survival and ML – Python</h3>
+                    <ul>
+                        <li>Implemented a classification model using a multi-layer perceptron neural network via scikit-learn with pandas to predict which people were likely to survive the Titanic disaster</li>
+                        <li> Top 6% in Kaggle competition with 80% test accuracy.
+                            <a href = https://github.com/jhwang0703/dma-projects/tree/main/Titanic target = "_blank" rel = "noreferrer noopener">Github</a>
+                        </li>
+                    </ul>
+            </div>
         </div>
 
         <div class = "volunteer container">
@@ -49,7 +72,46 @@
         </div>
     
         <div class = "contactme container">
-    
+            <h4>Contact me here!</h4>
+            <h5>
+                <a href = "https://github.com/jhwang0703" target = "_blank" rel = "noreferrer noopener">Github</a>
+            </h5>
+            <h5>
+                <a href = "https://linkedin.com/in/jhwang0703" target = "_blank" rel = "noreferrer noopener">LinkedIn</a>
+            </h5>
+            <button onClick = "alert('Surprise!')">Press for a surprise!</button> 
+        </div>
+
+        <div class = "note container"> 
+            <h3>Stick a note for me here!</h2>
+            <ul id = "notes">Notes:</ul>
+            <form>
+                <label>Note:</label>
+                <input type = "text" id="note"/>
+                <button type="submit">Submit</button>
+            </form>
+
+            <script>
+                const form = document.querySelector("form");
+                const input = document.querySelector("input");
+                const notes = document.getElementById("notes");
+        
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const inputnote = input.value;
+
+                    if (inputnote) { // Check that the note isn't blank
+                        const item = document.createElement('li');
+                        const label = document.createElement('label');
+
+                        label.textContent = inputnote;
+
+                        item.appendChild(label);
+                        notes.appendChild(item);
+                    }
+                });
+            </script>
         </div>
     </div>
 </body>

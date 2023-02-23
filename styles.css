@@ -6,6 +6,10 @@ header {
     margin-top: 100px;
 }
 
+a:hover {
+    color: #FF00FF;
+}
+
 body {
     /* background: #fbf8ee; */
     background: #F9F3E6;
@@ -64,14 +68,22 @@ body {
     /* margin-left: auto;
     margin-right: auto; */
     height: 450px;
+    cursor: pointer;
 }
 
 #intro-phrase {
     margin-bottom: -20px;
 }
 
-#intro-p {
+#intro-h6 {
+    font-weight: 100;
+    font-size: 18px;
     margin-top: -6px;
+}
+
+.allprojects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 h1 {
