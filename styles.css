@@ -2,6 +2,16 @@
     box-sizing: border-box;
 }
 
+header {
+    margin-top: 100px;
+}
+
+body {
+    /* background: #fbf8ee; */
+    background: #F9F3E6;
+    color: #434e5f;
+}
+
 .name {
     display: flex;
     justify-content: flex-start;
@@ -13,11 +23,13 @@
 
 #lastname {
     color: #4285f4;
-    margin-left: 10px;
+    
 }
 
 .container {
-    max-width: 1024px;
+    margin: auto;
+    /* max-width: 1080px; */
+    max-width: 980px;
 }
 
 .header {
@@ -31,10 +43,35 @@
 }
 
 .intro-blob {
-    display: grid;
+    display: flex;
     position: relative;
-    margin-left: 100px;
-    margin-top: 100px;
+}
+
+.intro-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 567px;
+}
+
+.intro-right {
+    display: flex;
+    justify-content: center;
+    width: 413px;
+}
+
+#stephen-and-dog {
+    /* margin-left: auto;
+    margin-right: auto; */
+    height: 450px;
+}
+
+#intro-phrase {
+    margin-bottom: -20px;
+}
+
+#intro-p {
+    margin-top: -6px;
 }
 
 h1 {
